@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "592100298066",
+    "project_id": "chat-app-2-3b07b",
+    "storage_bucket": "chat-app-2-3b07b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592100298066:android:07b3c178a9191187d9be8b",
+        "android_client_info": {
+          "package_name": "com.example.codmego_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592100298066-folg06nvv464cjjg501s2s9pscpgp9ap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhkzxd8CVMPNoLf3oQnXzblh2vySSDZLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592100298066-folg06nvv464cjjg501s2s9pscpgp9ap.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "592100298066-a1vb163tgugtfk7dcua50oc9uf9s2si8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.codmegoChat"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
