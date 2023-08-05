@@ -83,7 +83,7 @@ class RegisterViewBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'don\'t have an account !',
+                  'already have an account !',
                   style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(
