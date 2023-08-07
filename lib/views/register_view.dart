@@ -31,12 +31,9 @@ class _RegisterViewState extends State<RegisterView> {
           isLoading = true;
         } else if (state is RegisterSuccess) {
           isLoading = false;
-          debugPrint('**********************************');
-          debugPrint(
-              "User registered successfully with email : ${RegisterViewBody.emailAddress}");
           BlocProvider.of<ChatCubit>(context).getMessages();
           Navigator.pushNamed(context, ChatView.id,
-              arguments: RegisterViewBody.emailAddress);
+              arguments: BlocProvider.of<RegisterBloc>(context).emailAddress);
         } else if (state is RegisterFailure) {
           isLoading = false;
           snacBar(context, state.errorMessage);
@@ -44,7 +41,7 @@ class _RegisterViewState extends State<RegisterView> {
       },
       builder: (context, state) => ModalProgressHUD(
         inAsyncCall: isLoading,
-        child: Scaffold(
+        child: const Scaffold(
           backgroundColor: kColorBold,
           extendBodyBehindAppBar: false,
           //Register view body

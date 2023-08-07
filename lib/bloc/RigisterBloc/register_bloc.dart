@@ -1,16 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
-
-
-
 part 'register_event.dart';
 part 'register_state.dart';
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   String? emailAddress;
-  String? password;
+
   RegisterBloc() : super(RegisterInitial()) {
     on<RegisterEvent>((event, emit) async {
       //RegisterEvent
@@ -21,6 +17,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
           email: event.emailAddress,
           password: event.password,
         );
+        emailAddress = event.emailAddress;
         emit(RegisterSuccess());
       } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {
