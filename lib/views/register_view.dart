@@ -1,4 +1,3 @@
-import 'package:codmego_chat/bloc/authBloc/auth_bloc.dart';
 import 'package:codmego_chat/bloc/chatCubit/chat_cubit.dart';
 import 'package:codmego_chat/helper/constants.dart';
 import 'package:codmego_chat/views/chat_view.dart';
@@ -7,6 +6,8 @@ import 'package:codmego_chat/views/widgets/register_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+
+import '../bloc/RigisterBloc/register_bloc.dart';
 
 // ignore: must_be_immutable
 class RegisterView extends StatefulWidget {
@@ -24,7 +25,7 @@ class _RegisterViewState extends State<RegisterView> {
   @override
   Widget build(BuildContext context) {
     bool isLoading = false;
-    return BlocConsumer<AuthBloc, AuthState>(
+    return BlocConsumer<RegisterBloc, RegisterState>(
       listener: (context, state) {
         if (state is RegisterLoading) {
           isLoading = true;

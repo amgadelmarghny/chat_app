@@ -1,6 +1,6 @@
+import 'package:codmego_chat/bloc/Loginbloc/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../bloc/authBloc/auth_bloc.dart';
 import '../../category/containerbuttom.dart';
 import '../../category/textformfield.dart';
 import '../../helper/constants.dart';
@@ -66,8 +66,7 @@ class LoginViewBody extends StatelessWidget {
               onChange: (data) {
                 emailAddress = data;
 
-                debugPrint('##############################');
-                debugPrint(BlocProvider.of<AuthBloc>(context).emailAddress);
+               
               },
             ),
             const SizedBox(
@@ -114,7 +113,7 @@ class LoginViewBody extends StatelessWidget {
               text: 'LogIn',
               onTap: () async {
                 if (formKey.currentState!.validate()) {
-                  BlocProvider.of<AuthBloc>(context).add(
+                  BlocProvider.of<LoginBloc>(context).add(
                     LoginEvent(
                       emailAddress: emailAddress!,
                       password: password!,

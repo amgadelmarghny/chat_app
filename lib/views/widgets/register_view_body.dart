@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../bloc/authBloc/auth_bloc.dart';
+import '../../bloc/RigisterBloc/register_bloc.dart';
 import '../../category/containerbuttom.dart';
 import '../../category/textformfield.dart';
 import '../../helper/constants.dart';
@@ -14,7 +14,7 @@ class RegisterViewBody extends StatelessWidget {
 
   final GlobalKey<FormState> formKey = GlobalKey();
   static String? emailAddress, passWord;
-  
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -113,7 +113,7 @@ class RegisterViewBody extends StatelessWidget {
               onTap: () async {
                 if (formKey.currentState!.validate()) {
                   formKey.currentState!.save();
-                  BlocProvider.of<AuthBloc>(context).add(
+                  BlocProvider.of<RegisterBloc>(context).add(
                     RegisterEvent(
                       emailAddress: emailAddress!,
                       password: passWord!,

@@ -1,4 +1,3 @@
-import 'package:codmego_chat/bloc/authBloc/auth_bloc.dart';
 import 'package:codmego_chat/bloc/chatCubit/chat_cubit.dart';
 import 'package:codmego_chat/bloc_observer.dart';
 import 'package:codmego_chat/views/chat_view.dart';
@@ -8,6 +7,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'bloc/Loginbloc/login_bloc.dart';
+import 'bloc/RigisterBloc/register_bloc.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<AuthBloc>(create: (context) => AuthBloc()),
+        BlocProvider<LoginBloc>(create: (context) => LoginBloc()),
+        BlocProvider<RegisterBloc>(create: (context) => RegisterBloc()),
         BlocProvider<ChatCubit>(create: (context) => ChatCubit())
       ],
       child: MaterialApp(
