@@ -6,13 +6,20 @@ import '../../category/textformfield.dart';
 import '../../helper/constants.dart';
 import '../register_view.dart';
 
-class LoginViewBody extends StatelessWidget {
-  LoginViewBody({
+class LoginViewBody extends StatefulWidget {
+ const LoginViewBody({
     super.key,
   });
 
+  @override
+  State<LoginViewBody> createState() => _LoginViewBodyState();
+}
+
+class _LoginViewBodyState extends State<LoginViewBody> {
   final GlobalKey<FormState> formKey = GlobalKey();
-  static String? emailAddress, password;
+
+   String? emailAddress, password;
+
   @override
   Widget build(BuildContext context) {
     return Padding(

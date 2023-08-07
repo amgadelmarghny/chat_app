@@ -7,14 +7,18 @@ import '../../category/textformfield.dart';
 import '../../helper/constants.dart';
 
 // ignore: must_be_immutable
-class RegisterViewBody extends StatelessWidget {
-  RegisterViewBody({
+class RegisterViewBody extends StatefulWidget {
+  const RegisterViewBody({
     super.key,
   });
 
-  final GlobalKey<FormState> formKey = GlobalKey();
-  static String? emailAddress, passWord;
+  @override
+  State<RegisterViewBody> createState() => _RegisterViewBodyState();
+}
 
+class _RegisterViewBodyState extends State<RegisterViewBody> {
+  final GlobalKey<FormState> formKey = GlobalKey();
+  String? emailAddress, passWord;
   @override
   Widget build(BuildContext context) {
     return Padding(

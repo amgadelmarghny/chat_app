@@ -23,24 +23,19 @@ class LoginView extends StatelessWidget {
           isLoading = true;
         } else if (state is LoginSucces) {
           isLoading = false;
-          //debugPrint('***************************************');
-          //debugPrint(
-             // 'User logged in successfully with email : ${BlocProvider.of<LoginBloc>(context).emailAddress}');
+
           BlocProvider.of<ChatCubit>(context).getMessages();
 
           Navigator.pushNamed(context, ChatView.id,
-              arguments: LoginViewBody.emailAddress);
+              arguments: BlocProvider.of<LoginBloc>(context).emailAddress);
         } else if (state is LoginFailure) {
-          //debugPrint('***************************************');
-          // debugPrint(
-          //     'User logged in successfully with email : ${BlocProvider.of<LoginBloc>(context).emailAddress}');
           isLoading = false;
           snacBar(context, state.errMessage);
         }
       },
       builder: (context, state) => ModalProgressHUD(
         inAsyncCall: isLoading,
-        child: Scaffold(
+        child: const Scaffold(
           backgroundColor: kColorBold,
           extendBodyBehindAppBar: false,
           //login view body
