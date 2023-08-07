@@ -6,6 +6,7 @@ import '../../category/containerbuttom.dart';
 import '../../category/textformfield.dart';
 import '../../helper/constants.dart';
 
+// ignore: must_be_immutable
 class RegisterViewBody extends StatelessWidget {
   RegisterViewBody({
     super.key,
@@ -13,6 +14,7 @@ class RegisterViewBody extends StatelessWidget {
 
   final GlobalKey<FormState> formKey = GlobalKey();
   static String? emailAddress, passWord;
+  
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -110,6 +112,7 @@ class RegisterViewBody extends StatelessWidget {
               text: 'Sign Up',
               onTap: () async {
                 if (formKey.currentState!.validate()) {
+                  formKey.currentState!.save();
                   BlocProvider.of<AuthBloc>(context).add(
                     RegisterEvent(
                       emailAddress: emailAddress!,
