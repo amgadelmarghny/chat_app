@@ -7,7 +7,7 @@ import '../../helper/constants.dart';
 import '../register_view.dart';
 
 class LoginViewBody extends StatefulWidget {
- const LoginViewBody({
+  const LoginViewBody({
     super.key,
   });
 
@@ -18,13 +18,15 @@ class LoginViewBody extends StatefulWidget {
 class _LoginViewBodyState extends State<LoginViewBody> {
   final GlobalKey<FormState> formKey = GlobalKey();
 
-   String? emailAddress, password;
+  String? emailAddress, password;
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: Form(
+        autovalidateMode: autovalidateMode,
         key: formKey,
         child: ListView(
           children: [
@@ -72,8 +74,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               hintText: 'Email or Phone Number',
               onChange: (data) {
                 emailAddress = data;
-
-               
               },
             ),
             const SizedBox(
@@ -120,12 +120,16 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               text: 'LogIn',
               onTap: () async {
                 if (formKey.currentState!.validate()) {
+                  formKey.currentState!.save();
                   BlocProvider.of<LoginBloc>(context).add(
                     LoginEvent(
                       emailAddress: emailAddress!,
                       password: password!,
                     ),
                   );
+                } else {
+                  autovalidateMode = AutovalidateMode.always;
+                  setState(() {});
                 }
               },
             )

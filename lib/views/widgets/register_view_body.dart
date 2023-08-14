@@ -19,11 +19,13 @@ class RegisterViewBody extends StatefulWidget {
 class _RegisterViewBodyState extends State<RegisterViewBody> {
   final GlobalKey<FormState> formKey = GlobalKey();
   String? emailAddress, passWord;
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: Form(
+        autovalidateMode: autovalidateMode,
         key: formKey,
         child: ListView(
           children: [
@@ -123,6 +125,9 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                       password: passWord!,
                     ),
                   );
+                } else {
+                  autovalidateMode = AutovalidateMode.always;
+                  setState(() {});
                 }
               },
             )
