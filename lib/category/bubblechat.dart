@@ -1,12 +1,11 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:codmego_chat/model/message_model.dart';
 import 'package:flutter/material.dart';
 import '../helper/constants.dart';
 
 class CustomBabbleChat extends StatelessWidget {
- const CustomBabbleChat({Key? key, required this.messageModel}) : super(key: key);
- final MessageModel messageModel ;
+  const CustomBabbleChat({Key? key, required this.messageModel})
+      : super(key: key);
+  final MessageModel messageModel;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -32,9 +31,9 @@ class CustomBabbleChat extends StatelessWidget {
 }
 
 class CustomFriendBabbleChat extends StatelessWidget {
- const CustomFriendBabbleChat({Key? key, required this.messageFriend})
+  const CustomFriendBabbleChat({Key? key, required this.messageFriend})
       : super(key: key);
- final MessageModel messageFriend;
+  final MessageModel messageFriend;
   @override
   Widget build(BuildContext context) {
     return Align(
