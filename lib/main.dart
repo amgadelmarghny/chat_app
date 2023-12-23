@@ -6,7 +6,6 @@ import 'package:codmego_chat/views/register_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'bloc/Loginbloc/login_bloc.dart';
 import 'bloc/RigisterBloc/register_bloc.dart';
 import 'firebase_options.dart';
@@ -34,7 +33,6 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         routes: {
-          //  ContainerView.id :(context) => ContainerView(),
           LoginView.id: (context) => const LoginView(),
           RegisterView.id: (context) => const RegisterView(),
           ChatView.id: (context) => const ChatView(),

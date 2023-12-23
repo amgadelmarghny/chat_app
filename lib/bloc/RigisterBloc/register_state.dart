@@ -4,8 +4,6 @@ abstract class RegisterState {}
 
 class RegisterInitial extends RegisterState {}
 
-//Lodging State
-
 //Register States
 class RegisterLoading extends RegisterState {}
 

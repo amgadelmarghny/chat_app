@@ -70,6 +70,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
               height: 10,
             ),
             CustomTextField(
+              textInputType: TextInputType.emailAddress,
               hintText: 'Email or Phone Number',
               onChange: (data) {
                 emailAddress = data;
@@ -79,6 +80,8 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
               height: 20,
             ),
             CustomTextField(
+              obscureText: true,
+              textInputType: TextInputType.visiblePassword,
               hintText: 'Password',
               onChange: (data) {
                 passWord = data;

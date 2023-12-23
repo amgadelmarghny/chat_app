@@ -16,17 +16,18 @@ class LoginViewBody extends StatefulWidget {
 }
 
 class _LoginViewBodyState extends State<LoginViewBody> {
+  String? emailAddress, password;
+
   final GlobalKey<FormState> formKey = GlobalKey();
 
-  String? emailAddress, password;
-  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-
+  AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
+  bool isObscure = true;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: Form(
-        autovalidateMode: autovalidateMode,
+        autovalidateMode: autoValidateMode,
         key: formKey,
         child: ListView(
           children: [
@@ -71,6 +72,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               height: 10,
             ),
             CustomTextField(
+              textInputType: TextInputType.emailAddress,
               hintText: 'Email or Phone Number',
               onChange: (data) {
                 emailAddress = data;
@@ -80,7 +82,16 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               height: 20,
             ),
             CustomTextField(
-              obscureText: true,
+              suffixIcon: isObscure
+                  ? Icons.visibility_off_outlined
+                  : Icons.visibility_outlined,
+              suffixOnPressed: () {
+                setState(() {
+                  isObscure = !isObscure;
+                });
+              },
+              textInputType: TextInputType.visiblePassword,
+              obscureText: isObscure,
               hintText: 'Password',
               onChange: (data) {
                 password = data;
@@ -128,8 +139,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     ),
                   );
                 } else {
-                  autovalidateMode = AutovalidateMode.always;
-                  setState(() {});
+                  autoValidateMode = AutovalidateMode.always;
                 }
               },
             )

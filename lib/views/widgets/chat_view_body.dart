@@ -3,7 +3,6 @@ import 'package:codmego_chat/category/bubblechat.dart';
 import 'package:codmego_chat/category/text_send_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../model/message_model.dart';
 
 class ChatViewBody extends StatefulWidget {
@@ -21,7 +20,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
   /*the controller that used in scrollDown
   * and we used it in _scrollDown that located at the bottom*/
   final ScrollController _controller = ScrollController();
-  
+
   @override
   Widget build(BuildContext context) {
     final List<MessageModel> messageList =

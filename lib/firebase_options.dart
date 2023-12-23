@@ -67,7 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '592100298066',
     projectId: 'chat-app-2-3b07b',
     storageBucket: 'chat-app-2-3b07b.appspot.com',
-    iosClientId: '592100298066-a1vb163tgugtfk7dcua50oc9uf9s2si8.apps.googleusercontent.com',
+    iosClientId:
+        '592100298066-a1vb163tgugtfk7dcua50oc9uf9s2si8.apps.googleusercontent.com',
     iosBundleId: 'com.example.codmegoChat',
   );
 
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '592100298066',
     projectId: 'chat-app-2-3b07b',
     storageBucket: 'chat-app-2-3b07b.appspot.com',
-    iosClientId: '592100298066-a1vb163tgugtfk7dcua50oc9uf9s2si8.apps.googleusercontent.com',
+    iosClientId:
+        '592100298066-a1vb163tgugtfk7dcua50oc9uf9s2si8.apps.googleusercontent.com',
     iosBundleId: 'com.example.codmegoChat',
   );
 }

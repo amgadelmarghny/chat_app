@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 const kLogo = 'assets/images/Codmego2.jpg';
