@@ -25,8 +25,6 @@ class LoginView extends StatelessWidget {
           isLoading = false;
 
           BlocProvider.of<ChatCubit>(context).getMessages();
-          debugPrint("######################");
-          debugPrint('email : ${BlocProvider.of<LoginBloc>(context).emailAddress}');
           Navigator.pushNamed(context, ChatView.id,
               arguments: BlocProvider.of<LoginBloc>(context).emailAddress);
         } else if (state is LoginFailure) {

@@ -139,7 +139,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     ),
                   );
                 } else {
-                  autoValidateMode = AutovalidateMode.always;
+                  setState(() {
+                    autoValidateMode = AutovalidateMode.always;
+                  });
                 }
               },
             )
